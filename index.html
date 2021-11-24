@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <!-- Vue.js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <div class="text-white bg-main vh-100">
+            <div class="py-5">
+              <div class="frame px-3 py-4 m-auto bg-dark">
+                <div>
+                    <label>input:</label>
+                    <input type="text" class="form-control" :value="formula" disabled/>
+                </div>
+
+                <div>
+                    <label>total:</label>
+                    <input type="text" class="form-control" :value="value" disabled/>
+                </div>
+
+                <div class="buttons mt-3 d-flex justify-content-around flex-wrap col-12">
+                  <button class="btn btn-gray mb-3" @click="formula += '7'">7</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '8'">8</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '9'">9</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '4'">4</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '5'">5</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '6'">6</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '1'">1</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '2'">2</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '3'">3</button>
+                  <button class="btn btn-gray mb-3" @click="formula += '0'">0</button>
+                  <button class="btn btn-orange mb-3" @click="concatenateOperator(' + ')">+</button>
+                  <button class="btn btn-orange mb-3" @click="concatenateOperator(' - ')">-</button>
+                  <button class="btn btn-orange mb-3" @click="concatenateOperator(' * ')">*</button>
+                  <button class="btn btn-orange mb-3" @click="concatenateOperator(' / ')">/</button>
+                  <button class="btn btn-orange mb-3" @click="calculate()">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
